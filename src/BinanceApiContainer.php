@@ -77,7 +77,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#test-connectivity
+     * @link https://www.binance.com/restapipub.html#test-connectivity
      */
     public function ping()
     {
@@ -89,7 +89,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#check-server-time
+     * @link https://www.binance.com/restapipub.html#check-server-time
      */
     public function getServerTime()
     {
@@ -105,7 +105,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#order-book
+     * @link https://www.binance.com/restapipub.html#order-book
      */
     public function getOrderBook($params)
     {
@@ -126,7 +126,7 @@ class BinanceApiContainer
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Exception
      *
-     * @see https://www.binance.com/restapipub.html#compressedaggregate-trades-list
+     * @link https://www.binance.com/restapipub.html#compressedaggregate-trades-list
      */
     public function getAggTrades($params)
     {
@@ -146,7 +146,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see  https://www.binance.com/restapipub.html#klinecandlesticks
+     * @link  https://www.binance.com/restapipub.html#klinecandlesticks
      */
     public function getKlines($params)
     {
@@ -161,7 +161,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#24hr-ticker-price-change-statistics
+     * @link https://www.binance.com/restapipub.html#24hr-ticker-price-change-statistics
      */
     public function getTwentyFourTickerPrice($params)
     {
@@ -173,7 +173,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#symbols-price-ticker
+     * @link https://www.binance.com/restapipub.html#symbols-price-ticker
      */
     public function getTickers()
     {
@@ -185,7 +185,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#symbols-order-book-ticker
+     * @link https://www.binance.com/restapipub.html#symbols-order-book-ticker
      */
     public function getBookTickers()
     {
@@ -209,7 +209,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#new-order--signed
+     * @link https://www.binance.com/restapipub.html#new-order--signed
      */
     public function postOrder($params)
     {
@@ -235,7 +235,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#test-new-order-signed
+     * @link https://www.binance.com/restapipub.html#test-new-order-signed
      */
     public function postOrderTest($params)
     {
@@ -255,7 +255,7 @@ class BinanceApiContainer
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Exception
      *
-     * @see https://www.binance.com/restapipub.html#query-order-signed
+     * @link https://www.binance.com/restapipub.html#query-order-signed
      */
     public function getOrder($params)
     {
@@ -276,7 +276,7 @@ class BinanceApiContainer
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Exception
      *
-     * @see https://www.binance.com/restapipub.html#cancel-order-signed
+     * @link https://www.binance.com/restapipub.html#cancel-order-signed
      */
     public function cancelOrder($params)
     {
@@ -293,7 +293,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#current-open-orders-signed
+     * @link https://www.binance.com/restapipub.html#current-open-orders-signed
      */
     public function getOpenOrders($params)
     {
@@ -312,7 +312,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#all-orders-signed
+     * @link https://www.binance.com/restapipub.html#all-orders-signed
      */
     public function getOrders($params)
     {
@@ -328,7 +328,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#account-information-signed
+     * @link https://www.binance.com/restapipub.html#account-information-signed
      */
     public function getAccount($params)
     {
@@ -347,7 +347,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#account-trade-list-signed
+     * @link https://www.binance.com/restapipub.html#account-trade-list-signed
      */
     public function getTrades($params)
     {
@@ -359,7 +359,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#start-user-data-stream-api-key
+     * @link https://www.binance.com/restapipub.html#start-user-data-stream-api-key
      */
     public function startUserDataStream()
     {
@@ -374,7 +374,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#keepalive-user-data-stream-api-key
+     * @link https://www.binance.com/restapipub.html#keepalive-user-data-stream-api-key
      */
     public function keepaliveUserDataStream($params)
     {
@@ -389,7 +389,7 @@ class BinanceApiContainer
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @see https://www.binance.com/restapipub.html#close-user-data-stream-api-key
+     * @link https://www.binance.com/restapipub.html#close-user-data-stream-api-key
      */
     public function closeUserDataStream($params)
     {
@@ -402,7 +402,7 @@ class BinanceApiContainer
      * @param array $params The data to send.
      *      @option string "symbol" The symbol to search for. (required)
      *
-     * @see https://www.binance.com/restapipub.html#depth-wss-endpoint
+     * @link https://www.binance.com/restapipub.html#depth-wss-endpoint
      */
     public function depthWebsocket($params)
     {
@@ -416,7 +416,7 @@ class BinanceApiContainer
      *      @option string "symbol"   The symbol to search for. (required)
      *      @option string "interval" Kline intervals enum. (required)
      *
-     * @see https://www.binance.com/restapipub.html#kline-wss-endpoint
+     * @link https://www.binance.com/restapipub.html#kline-wss-endpoint
      */
     public function klineWebsocket($params)
     {
@@ -429,7 +429,7 @@ class BinanceApiContainer
      * @param array $params The data to send.
      *      @option string "symbol" The symbol to search for. (required)
      *
-     * @see https://www.binance.com/restapipub.html#trades-wss-endpoint
+     * @link https://www.binance.com/restapipub.html#trades-wss-endpoint
      */
     public function tradesWebsocket($params)
     {
@@ -442,7 +442,7 @@ class BinanceApiContainer
      * @param array $params The data to send.
      *      @option string "listenKey" The key for the user's data steam. (required)
      *
-     * @see https://www.binance.com/restapipub.html#user-wss-endpoint
+     * @link https://www.binance.com/restapipub.html#user-wss-endpoint
      */
     public function userWebsocket($params)
     {
@@ -514,7 +514,7 @@ class BinanceApiContainer
      * @param bool   $once   If true, it will close the connection after the first successful message.
      *
      * @return void
-     * @throws \Exception
+     * @throws \LarislackersException
      */
     private function _makeWebsocketRequest($type, $params, $once = false)
     {
