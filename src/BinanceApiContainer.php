@@ -63,7 +63,7 @@ class BinanceApiContainer
     }
 
     /**
-     * Returns list of products currenclty listed on Binance.
+     * Returns list of products currently listed on Binance.
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
@@ -101,7 +101,7 @@ class BinanceApiContainer
      *
      * @param array $params The data to send.
      *      @option string "symbol" The symbol to search for. (required)
-     *      @option int    "limit"  The number of results returned from the query. (required) (max value 100)
+     *      @option int    "limit"  The number of results returned from the query. (max value 100)
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
@@ -121,7 +121,7 @@ class BinanceApiContainer
      *      @option int    "fromId"    ID to get aggregate trades from INCLUSIVE.
      *      @option int    "startTime" Timestamp in ms to get aggregate trades from INCLUSIVE.
      *      @option int    "endTime"   Timestamp in ms to get aggregate trades until INCLUSIVE.
-     *      @option int    "limit"     The number of results returned from the query. (max value 100)
+     *      @option int    "limit"     The number of results returned from the query. (max value 500)
      *
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Exception
