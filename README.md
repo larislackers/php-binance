@@ -152,6 +152,20 @@ $bac->tradesWebsocket(['symbol' => 'BNBBTC']);
 $bac->userWebsocket(['listenKey' => $listenKey]);
 ```
 
+### 24. Submit a withdraw request
+```php
+$bac->withdraw(['asset' => '', 'address' => '', 'amount' => #, 'timestamp' => time() * 1000]);
+```
+
+### 25. Fetch deposit history
+```php
+$bac->getDepositHistory(['timestamp' => time() * 1000]);
+```
+
+### 26. Fetch withdraw history
+```php
+$bac->getWithdrawHistory(['timestamp' => time() * 1000]);
+```
 
 ## Notes
 

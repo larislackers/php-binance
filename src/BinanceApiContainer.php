@@ -119,8 +119,8 @@ class BinanceApiContainer
      * @param array $params The data to send.
      *      @option string "symbol"    The symbol to search for. (required)
      *      @option int    "fromId"    ID to get aggregate trades from INCLUSIVE.
-     *      @option int    "startTime" Timestamp in ms to get aggregate trades from INCLUSIVE.
-     *      @option int    "endTime"   Timestamp in ms to get aggregate trades until INCLUSIVE.
+     *      @option int    "startTime" Timestamp in milliseconds to get aggregate trades from INCLUSIVE.
+     *      @option int    "endTime"   Timestamp in milliseconds to get aggregate trades until INCLUSIVE.
      *      @option int    "limit"     The number of results returned from the query. (max value 500)
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -140,8 +140,8 @@ class BinanceApiContainer
      * @param array $params The data to send.
      *      @option string "symbol"    The symbol to search for. (required)
      *      @option string "interval"  Kline intervals enum. (required)
-     *      @option int    "startTime" Timestamp in ms to get aggregate trades from INCLUSIVE.
-     *      @option int    "endTime"   Timestamp in ms to get aggregate trades until INCLUSIVE.
+     *      @option int    "startTime" Timestamp in milliseconds to get aggregate trades from INCLUSIVE.
+     *      @option int    "endTime"   Timestamp in milliseconds to get aggregate trades until INCLUSIVE.
      *      @option int    "limit"     The number of results returned from the query. (max value 500)
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -355,6 +355,66 @@ class BinanceApiContainer
     }
 
     /**
+     * Submit a withdraw request.
+     *
+     * @param array $params The data to send.
+     *      @option string "asset"      The requested asset. (required)
+     *      @option string "address"    The request address. (required)
+     *      @option double "amount"     The request amount. (required)
+     *      @option string "name"       Description of the address.
+     *      @option int    "recvWindow" The number of milliseconds after timestamp the request is valid for.
+     *      @option int    "timestamp"  A UNIX timestamp. (required)
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     *
+     * @link https://www.binance.com/restapipub.html#account-trade-list-signed
+     */
+    public function withdraw($params)
+    {
+        return $this->_makeApiRequest('POST', 'wapi/v1/withdraw.html', 'WAPI_SIGNED', $params);
+    }
+
+    /**
+     * Fetch deposit history.
+     *
+     * @param array $params The data to send.
+     *      @option string "asset"      The requested asset.
+     *      @option enum   "status"     Enum as WAPI_DEPOSIT_STATUS_*.
+     *      @option int    "startTime"  Timestamp in milliseconds.
+     *      @option int    "endTime"    Timestamp in milliseconds.
+     *      @option int    "recvWindow" The number of milliseconds after timestamp the request is valid for.
+     *      @option int    "timestamp"  A UNIX timestamp. (required)
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     *
+     * @link https://www.binance.com/restapipub.html#account-trade-list-signed
+     */
+    public function getDepositHistory($params)
+    {
+        return $this->_makeApiRequest('POST', 'wapi/v1/getDepositHistory.html', 'WAPI_SIGNED', $params);
+    }
+
+    /**
+     * Fetch withdraw history.
+     *
+     * @param array $params The data to send.
+     *      @option string "asset"      The requested asset.
+     *      @option enum   "status"     Enum as WAPI_WITHDRAW_STATUS_*.
+     *      @option int    "startTime"  Timestamp in milliseconds.
+     *      @option int    "endTime"    Timestamp in milliseconds.
+     *      @option int    "recvWindow" The number of milliseconds after timestamp the request is valid for.
+     *      @option int    "timestamp"  A UNIX timestamp. (required)
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     *
+     * @link https://www.binance.com/restapipub.html#account-trade-list-signed
+     */
+    public function getWithdrawHistory($params)
+    {
+        return $this->_makeApiRequest('POST', 'wapi/v1/getWithdrawHistory.html', 'WAPI_SIGNED', $params);
+    }
+
+    /**
      * Start a new user data stream.
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -479,6 +539,11 @@ class BinanceApiContainer
                 $url = ConnectionDetails::API_URL . ConnectionDetails::API_VERSION_SIGNED . $endPoint;
                 $params['signature'] = hash_hmac('sha256', http_build_query($params), $this->_apiSecret);
                 break;
+            case 'WAPI_SIGNED':
+                $client = new Client(['headers' => ['X-MBX-APIKEY' => $this->_apiKey], 'http_errors' => false]);
+                $url = ConnectionDetails::API_URL . $endPoint;
+                $params['signature'] = hash_hmac('sha256', http_build_query($params), $this->_apiSecret);
+                break;
             case 'WEB':
                 $client = new Client(['http_errors' => false]);
                 $url = ConnectionDetails::API_URL . $endPoint;
@@ -514,7 +579,7 @@ class BinanceApiContainer
      * @param bool   $once   If true, it will close the connection after the first successful message.
      *
      * @return void
-     * @throws \LarislackersException
+     * @throws LarislackersException
      */
     private function _makeWebsocketRequest($type, $params, $once = false)
     {

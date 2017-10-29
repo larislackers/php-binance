@@ -1,7 +1,8 @@
 {
     "name": "larislackers/php-binance",
+    "version": "1.0.2",
     "description": "A PHP wrapper for the Binance API endpoints.",
-    "keywords": ["binance", "cryptocurrency", "php", "api"],
+    "keywords": ["binance", "cryptocurrency", "php", "api", "wrapper-api", "php-library", "cryptocurrency-exchanges"],
     "homepage": "https://github.com/larislackers/php-binance",
     "license": "MIT",
     "authors": [
