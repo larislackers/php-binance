@@ -110,7 +110,7 @@
 		<b>Namespace:</b> <a href="namespace-Larislackers.html">Larislackers</a>\<a href="namespace-Larislackers.BinanceApi.html">BinanceApi</a><br>
 		<b>Package:</b> Larislackers\BinanceApi<br>
 
-			<b>Located at</b> <a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#12-552" title="Go to source code">BinanceApiContainer.php</a>
+			<b>Located at</b> <a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#12-617" title="Go to source code">BinanceApiContainer.php</a>
 		<br>
 	</div>
 
@@ -238,11 +238,11 @@
 		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#65-73" title="Go to source code">getProducts</a>( )</code>
 
 		<div class="description short">
-			<p>Returns list of products currenclty listed on Binance.</p>
+			<p>Returns list of products currently listed on Binance.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Returns list of products currenclty listed on Binance.</p>
+			<p>Returns list of products currently listed on Binance.</p>
 
 
 
@@ -374,7 +374,7 @@
 				<h4>Option</h4>
 				<div class="list">
 						string "symbol" The symbol to search for. (required)<br>
-						int    "limit"  The number of results returned from the query. (required) (max value 100)<br>
+						int    "limit"  The number of results returned from the query. (max value 100)<br>
 				</div>
 
 
@@ -429,9 +429,9 @@ Trades that fill at the time, from the same order, with the same price will have
 				<div class="list">
 						string "symbol"    The symbol to search for. (required)<br>
 						int    "fromId"    ID to get aggregate trades from INCLUSIVE.<br>
-						int    "startTime" Timestamp in ms to get aggregate trades from INCLUSIVE.<br>
-						int    "endTime"   Timestamp in ms to get aggregate trades until INCLUSIVE.<br>
-						int    "limit"     The number of results returned from the query. (max value 100)<br>
+						int    "startTime" Timestamp in milliseconds to get aggregate trades from INCLUSIVE.<br>
+						int    "endTime"   Timestamp in milliseconds to get aggregate trades until INCLUSIVE.<br>
+						int    "limit"     The number of results returned from the query. (max value 500)<br>
 				</div>
 
 
@@ -482,8 +482,8 @@ Klines are uniquely identified by their open time.</p>
 				<div class="list">
 						string "symbol"    The symbol to search for. (required)<br>
 						string "interval"  Kline intervals enum. (required)<br>
-						int    "startTime" Timestamp in ms to get aggregate trades from INCLUSIVE.<br>
-						int    "endTime"   Timestamp in ms to get aggregate trades until INCLUSIVE.<br>
+						int    "startTime" Timestamp in milliseconds to get aggregate trades from INCLUSIVE.<br>
+						int    "endTime"   Timestamp in milliseconds to get aggregate trades until INCLUSIVE.<br>
 						int    "limit"     The number of results returned from the query. (max value 500)<br>
 				</div>
 
@@ -1039,6 +1039,162 @@ Creates and validates a new order but does not send it into the matching engine.
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="withdraw" id="_withdraw">
+
+		<td class="attributes"><code>
+			 public 
+
+			Psr\Http\Message\ResponseInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_withdraw">#</a>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#357-375" title="Go to source code">withdraw</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>Submit a withdraw request.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Submit a withdraw request.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd>The data to send.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Psr\Http\Message\ResponseInterface
+				</div>
+
+
+				<h4>Link</h4>
+				<div class="list">
+						<a href="https://www.binance.com/restapipub.html#account-trade-list-signed">https://www.binance.com/restapipub.html#account-trade-list-signed</a><br>
+				</div>
+				<h4>Option</h4>
+				<div class="list">
+						string "asset"      The requested asset. (required)<br>
+						string "address"    The request address. (required)<br>
+						double "amount"     The request amount. (required)<br>
+						string "name"       Description of the address.<br>
+						int    "recvWindow" The number of milliseconds after timestamp the request is valid for.<br>
+						int    "timestamp"  A UNIX timestamp. (required)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDepositHistory" id="_getDepositHistory">
+
+		<td class="attributes"><code>
+			 public 
+
+			Psr\Http\Message\ResponseInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDepositHistory">#</a>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#377-395" title="Go to source code">getDepositHistory</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>Fetch deposit history.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetch deposit history.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd>The data to send.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Psr\Http\Message\ResponseInterface
+				</div>
+
+
+				<h4>Link</h4>
+				<div class="list">
+						<a href="https://www.binance.com/restapipub.html#account-trade-list-signed">https://www.binance.com/restapipub.html#account-trade-list-signed</a><br>
+				</div>
+				<h4>Option</h4>
+				<div class="list">
+						string "asset"      The requested asset.<br>
+						enum   "status"     Enum as WAPI_DEPOSIT_STATUS_*.<br>
+						int    "startTime"  Timestamp in milliseconds.<br>
+						int    "endTime"    Timestamp in milliseconds.<br>
+						int    "recvWindow" The number of milliseconds after timestamp the request is valid for.<br>
+						int    "timestamp"  A UNIX timestamp. (required)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getWithdrawHistory" id="_getWithdrawHistory">
+
+		<td class="attributes"><code>
+			 public 
+
+			Psr\Http\Message\ResponseInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getWithdrawHistory">#</a>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#397-415" title="Go to source code">getWithdrawHistory</a>( <span>array <var>$params</var></span> )</code>
+
+		<div class="description short">
+			<p>Fetch withdraw history.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetch withdraw history.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$params</var></dt>
+					<dd>The data to send.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Psr\Http\Message\ResponseInterface
+				</div>
+
+
+				<h4>Link</h4>
+				<div class="list">
+						<a href="https://www.binance.com/restapipub.html#account-trade-list-signed">https://www.binance.com/restapipub.html#account-trade-list-signed</a><br>
+				</div>
+				<h4>Option</h4>
+				<div class="list">
+						string "asset"      The requested asset.<br>
+						enum   "status"     Enum as WAPI_WITHDRAW_STATUS_*.<br>
+						int    "startTime"  Timestamp in milliseconds.<br>
+						int    "endTime"    Timestamp in milliseconds.<br>
+						int    "recvWindow" The number of milliseconds after timestamp the request is valid for.<br>
+						int    "timestamp"  A UNIX timestamp. (required)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="startUserDataStream" id="_startUserDataStream">
 
 		<td class="attributes"><code>
@@ -1051,7 +1207,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_startUserDataStream">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#357-367" title="Go to source code">startUserDataStream</a>( )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#417-427" title="Go to source code">startUserDataStream</a>( )</code>
 
 		<div class="description short">
 			<p>Start a new user data stream.</p>
@@ -1089,7 +1245,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_keepaliveUserDataStream">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#369-382" title="Go to source code">keepaliveUserDataStream</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#429-442" title="Go to source code">keepaliveUserDataStream</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>PING a user data stream to prevent a time out.</p>
@@ -1136,7 +1292,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_closeUserDataStream">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#384-397" title="Go to source code">closeUserDataStream</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#444-457" title="Go to source code">closeUserDataStream</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Close out a user data stream.</p>
@@ -1183,7 +1339,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_depthWebsocket">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#399-410" title="Go to source code">depthWebsocket</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#459-470" title="Go to source code">depthWebsocket</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Websocket url for depth endpoint.</p>
@@ -1226,7 +1382,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_klineWebsocket">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#412-424" title="Go to source code">klineWebsocket</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#472-484" title="Go to source code">klineWebsocket</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Websocket url for kline endpoint.</p>
@@ -1270,7 +1426,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_tradesWebsocket">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#426-437" title="Go to source code">tradesWebsocket</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#486-497" title="Go to source code">tradesWebsocket</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Websocket url for trades endpoint.</p>
@@ -1313,7 +1469,7 @@ Creates and validates a new order but does not send it into the matching engine.
 
 		<td class="name"><div>
 		<a class="anchor" href="#_userWebsocket">#</a>
-		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#439-450" title="Go to source code">userWebsocket</a>( <span>array <var>$params</var></span> )</code>
+		<code><a href="source-class-Larislackers.BinanceApi.BinanceApiContainer.html#499-510" title="Go to source code">userWebsocket</a>( <span>array <var>$params</var></span> )</code>
 
 		<div class="description short">
 			<p>Websocket url for user data endpoint.</p>
