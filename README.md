@@ -175,7 +175,7 @@ _All parameters in the examples are the minimum required for each function and m
 
 **You should use your own logger (like [Sentry](https://sentry.io/welcome/))** and catch `BinanceApiException` for exceptions returned from Binance API and `LarislackersException` for exceptions returned from Websockets.
 
-**Don't reinvent the wheel* by trying to cache results in a request lifecycle with static classes. Use a framework that supports caching (like [Laravel](https://laravel.com/docs/5.5/cache)), an extension (like [Memcached](https://memcached.org/)) or using files. Additional information can be found [here](http://www.php-cache.com/en/latest/).
+**Don't reinvent the wheel** by trying to cache results in a request lifecycle with static classes. Use a framework that supports caching (like [Laravel](https://laravel.com/docs/5.5/cache)), an extension (like [Memcached](https://memcached.org/)) or using files. Additional information can be found [here](http://www.php-cache.com/en/latest/).
 
 **More information on how to use the library can be found [here](https://larislackers.github.io/php-binance/).**
 
