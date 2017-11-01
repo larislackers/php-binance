@@ -154,7 +154,7 @@ $bac->userWebsocket(['listenKey' => $listenKey]);
 
 ### 24. Submit a withdraw request
 ```php
-$bac->withdraw(['asset' => '', 'address' => '', 'amount' => #, 'timestamp' => time() * 1000]);
+$bac->withdraw(['asset' => '', 'address' => $address, 'amount' => $amount, 'timestamp' => time() * 1000]);
 ```
 
 ### 25. Fetch deposit history
@@ -174,6 +174,8 @@ _All parameters in the examples are the minimum required for each function and m
 **Avoid to use hardcoded values**; enums are available (for intervals, types, sides, etc) for consistency and compliance with the Binance API.
 
 **You should use your own logger (like [Sentry](https://sentry.io/welcome/))** and catch `BinanceApiException` for exceptions returned from Binance API and `LarislackersException` for exceptions returned from Websockets.
+
+**Don't reinvent the wheel* by trying to cache results in a request lifecycle with static classes. Use a framework that supports caching (like [Laravel](https://laravel.com/docs/5.5/cache)), an extension (like [Memcached](https://memcached.org/)) or using files. Additional information can be found [here](http://www.php-cache.com/en/latest/).
 
 **More information on how to use the library can be found [here](https://larislackers.github.io/php-binance/).**
 
