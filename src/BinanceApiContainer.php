@@ -63,16 +63,6 @@ class BinanceApiContainer
     }
 
     /**
-     * Returns list of products currently listed on Binance.
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function getProducts()
-    {
-        return $this->_makeApiRequest('GET', 'exchange/public/product', 'WEB');
-    }
-
-    /**
      * Test connectivity to the Rest API.
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -543,10 +533,6 @@ class BinanceApiContainer
                 $client = new Client(['headers' => ['X-MBX-APIKEY' => $this->_apiKey], 'http_errors' => false]);
                 $url = ConnectionDetails::API_URL . $endPoint;
                 $params['signature'] = hash_hmac('sha256', http_build_query($params), $this->_apiSecret);
-                break;
-            case 'WEB':
-                $client = new Client(['http_errors' => false]);
-                $url = ConnectionDetails::API_URL . $endPoint;
                 break;
         }
 
