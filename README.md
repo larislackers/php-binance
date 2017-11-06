@@ -22,147 +22,142 @@ First things first, in order to use the API wrapper you should initialize it wit
 $bac = new BinanceApiContainer('<your_key>', '<your_secret>');
 ```
 
-### 1. List of products (pairs) currently listed on Binance.
-```php
-$bac->getProducts();
-```
-
-### 2. Ping connectivity
+### 1. Ping connectivity
 ```php
 $bac->ping();
 ```
 
-### 3. Get server time
+### 2. Get server time
 ```php
 $bac->getServerTime();
 ```
 
-### 4. All orders for a symbol
+### 3. All orders for a symbol
 ```php
 $bac->getOrderBook(['symbol' => 'BNBBTC']);
 ```
 
-### 5. Aggregate trades list
+### 4. Aggregate trades list
 ```php
 $bac->getAggTrades(['symbol' => 'BNBBTC']);
 ```
 
-### 6. Kline/candlestick bars for a symbol
+### 5. Kline/candlestick bars for a symbol
 ```php
 $bac->getKlines(['symbol' => 'BNBBTC']);
 ```
 
-### 7. 24 hour price change statistics
+### 6. 24 hour price change statistics
 ```php
 $bac->getTwentyFourTickerPrice(['symbol' => 'BNBBTC']);
 ```
 
-### 8. Latest price for all symbols
+### 7. Latest price for all symbols
 ```php
 $bac->getTickers();
 ```
 
-### 9. Symbols order book ticker
+### 8. Symbols order book ticker
 ```php
 $bac->getBookTickers();
 ```
 
-### 10a. Place a LIMIT order
+### 9a. Place a LIMIT order
 ```php
 $bac->postOrder(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000, 'quantity' => $quantity, 'price' => $price, 'timeInForce' => BinanceApi::TIME_IN_FORCE_GOOD_TILL_CANCELLED]);
 ```
 
-### 10b. Place a MARKET order
+### 9b. Place a MARKET order
 ```php
 $bac->postOrder(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000, 'quantity' => $quantity, 'timeInForce' => $timeInForce]);
 ```
 
-### 10c. Place a STOP LOSS order
+### 9c. Place a STOP LOSS order
 ```php
 $bac->postOrder(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000, 'quantity' => $quantity, 'price' => $price, 'stopPrice' => $stopPrice, 'timeInForce' => $timeInForce]);
 ```
 
-### 10d. Place an ICEBERG order
+### 9d. Place an ICEBERG order
 ```php
 $bac->postOrder(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000, 'quantity' => $quantity, 'price' => $price, 'icebergQty' => $icebergQty, 'timeInForce' => $timeInForce]);
 ```
 
-### 11. Check an order's status
+### 10. Check an order's status
 ```php
 $bac->getOrder(['symbol' => 'BNBBTC', 'orderId' => $orderId, 'timestamp' => time() * 1000]);
 ```
 
-### 12. Cancel an active order
+### 11. Cancel an active order
 ```php
 $bac->cancelOrder(['symbol' => 'BNBBTC', 'orderId' => $orderId, 'timestamp' => time() * 1000]);
 ```
 
-### 13. All open orders on a symbol
+### 12. All open orders on a symbol
 ```php
 $bac->getOpenOrders(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000]);
 ```
 
-### 14. All account orders; active, canceled, or filled
+### 13. All account orders; active, canceled, or filled
 ```php
 $bac->getOrders(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000])
 ```
 
-### 15. Account information
+### 14. Account information
 ```php
 $bac->getAccount(['timestamp' => time() * 1000]);
 ```
 
-### 16. Trades for a specific account and symbol
+### 15. Trades for a specific account and symbol
 ```php
 $bac->getTrades(['symbol' => 'BNBBTC', 'timestamp' => time() * 1000]);
 ```
 
-### 17. Start a new user data stream
+### 16. Start a new user data stream
 ```php
 $bac->startUserDataStream();
 ```
 
-### 18. PING a user data stream to prevent a time out
+### 17. PING a user data stream to prevent a time out
 ```php
 $bac->keepaliveUserDataStream(['listenKey' => $listenKey]);
 ```
 
-### 19. Close out a user data stream
+### 18. Close out a user data stream
 ```php
 $bac->closeUserDataStream(['listenKey' => $listenKey]);
 ```
 
-### 20. Websocket for depth
+### 19. Websocket for depth
 ```php
 $bac->depthWebsocket(['symbol' => 'BNBBTC']);
 ```
 
-### 21. Websocket for kline
+### 20. Websocket for kline
 ```php
 $bac->klineWebsocket(['symbol' => 'BNBBTC', 'interval' => $interval]);
 ```
 
-### 22. Websocket for trades
+### 21. Websocket for trades
 ```php
 $bac->tradesWebsocket(['symbol' => 'BNBBTC']);
 ```
 
-### 23. Websocket for user data
+### 22. Websocket for user data
 ```php
 $bac->userWebsocket(['listenKey' => $listenKey]);
 ```
 
-### 24. Submit a withdraw request
+### 23. Submit a withdraw request
 ```php
 $bac->withdraw(['asset' => '', 'address' => $address, 'amount' => $amount, 'timestamp' => time() * 1000]);
 ```
 
-### 25. Fetch deposit history
+### 24. Fetch deposit history
 ```php
 $bac->getDepositHistory(['timestamp' => time() * 1000]);
 ```
 
-### 26. Fetch withdraw history
+### 25. Fetch withdraw history
 ```php
 $bac->getWithdrawHistory(['timestamp' => time() * 1000]);
 ```
