@@ -361,7 +361,7 @@ class BinanceApiContainer
      */
     public function withdraw($params)
     {
-        return $this->_makeApiRequest('POST', 'wapi/v1/withdraw.html', 'WAPI_SIGNED', $params);
+        return $this->_makeApiRequest('POSTV2', 'wapi/v1/withdraw.html', 'WAPI_SIGNED', $params);
     }
 
     /**
@@ -381,7 +381,7 @@ class BinanceApiContainer
      */
     public function getDepositHistory($params)
     {
-        return $this->_makeApiRequest('POST', 'wapi/v1/getDepositHistory.html', 'WAPI_SIGNED', $params);
+        return $this->_makeApiRequest('POSTV2', 'wapi/v1/getDepositHistory.html', 'WAPI_SIGNED', $params);
     }
 
     /**
@@ -401,7 +401,7 @@ class BinanceApiContainer
      */
     public function getWithdrawHistory($params)
     {
-        return $this->_makeApiRequest('POST', 'wapi/v1/getWithdrawHistory.html', 'WAPI_SIGNED', $params);
+        return $this->_makeApiRequest('POSTV2', 'wapi/v1/getWithdrawHistory.html', 'WAPI_SIGNED', $params);
     }
 
     /**
@@ -545,6 +545,10 @@ class BinanceApiContainer
             case 'PUT':
             case 'DELETE':
                 $params['form_params'] = $params;
+                break;
+            case 'POSTV2':
+                $type = 'POST';
+                $params['query'] = $params;
                 break;
         }
 
