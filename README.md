@@ -52,7 +52,7 @@ Larislackers-BinanceApi is open-sourced software licensed under the [MIT license
 
 ## Donations/Support
 
-If you find this library to your likings and enjoy using it, please consider a donation to one of the following addresses:
+If you find this library to your liking and enjoy using it, please consider a donation to one of the following addresses:
 * BTC: 13rSaL7ze89Pz28fNR9cNCnNVNvLWR3eFt
 * ETH: 0x03d4566d13ca7c7b30c39666b1f21ff97bee3f97
 * XMR: 49hxHRNwLSdQcXuCcac3ySMnAEuH4BhLWR8NddjHi6QBJHNvj1LqcSg2X8qpTQgsE1brzt37W6dLiiSN6uCj1CwyUPNr8R5
