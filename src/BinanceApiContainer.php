@@ -183,6 +183,16 @@ class BinanceApiContainer
     }
 
     /**
+     * Returns the current prices for all symbols
+     * @param $params
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function getPrice($params)
+    {
+        return $this->_makeApiRequest('GET', 'ticker/price', 'SIGNED', $params);
+    }
+
+    /**
      * Send in a new order.
      *
      * @param array $params The data to send.
