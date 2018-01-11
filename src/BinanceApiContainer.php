@@ -510,7 +510,7 @@ class BinanceApiContainer
      * @return \Psr\Http\Message\ResponseInterface
      * @throws BinanceApiException
      */
-    private function _makeApiRequest($type, $endPoint, $securityType = 'NONE', $params = [])
+    protected function _makeApiRequest($type, $endPoint, $securityType = 'NONE', $params = [])
     {
         $params = array_filter($params, 'strlen');
 
@@ -571,7 +571,7 @@ class BinanceApiContainer
      * @return void
      * @throws LarislackersException
      */
-    private function _makeWebsocketRequest($type, $params, $once = false)
+    protected function _makeWebsocketRequest($type, $params, $once = false)
     {
         switch (strtoupper($type)) {
             default:
