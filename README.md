@@ -44,7 +44,7 @@ _All parameters required for each function must be in array format. More informa
 
 **More information on how to use the library can be found [here](https://larislackers.github.io/php-binance/).**
 
-*See the official [API documentation](https://www.binance.com/restapipub.html) for more information about the endpoints and responses.*
+*See the official [API documentation](https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md) for more information about the endpoints and responses.*
 
 ## License
 
