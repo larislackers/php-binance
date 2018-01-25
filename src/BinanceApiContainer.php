@@ -189,7 +189,7 @@ class BinanceApiContainer
      */
     public function getPrice($params)
     {
-        return $this->_makeApiRequest('GET', 'ticker/price', 'SIGNED', $params);
+        return $this->_makeApiRequest('GET', 'ticker/price', 'NONE', $params);
     }
 
     /**
